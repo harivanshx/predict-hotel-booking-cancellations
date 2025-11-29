@@ -131,7 +131,7 @@ with tab1:
                     labels={'is_canceled': 'Status'}
                 )
                 fig.update_traces(textposition='inside', textinfo='percent+label')
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
         
         with col2:
             st.subheader("Bookings by Hotel Type")
@@ -145,7 +145,7 @@ with tab1:
                     color=hotel_counts.values,
                     color_continuous_scale='Blues'
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
         
         # Key statistics
         st.subheader("Key Statistics")
@@ -226,7 +226,6 @@ with tab2:
         # Display data
         st.dataframe(
             filtered_df.head(100),
-            use_container_width=True,
             height=400
         )
         
@@ -256,7 +255,7 @@ with tab2:
                     color='is_canceled',
                     color_discrete_map={0: '#2ecc71', 1: '#e74c3c'}
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
         
         with viz_col2:
             if 'adr' in filtered_df.columns and 'is_canceled' in filtered_df.columns:
@@ -269,7 +268,7 @@ with tab2:
                     color='is_canceled',
                     color_discrete_map={0: '#2ecc71', 1: '#e74c3c'}
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
     else:
         st.error("❌ No data available")
 
@@ -321,7 +320,7 @@ with tab3:
                 yaxis_title="Score",
                 yaxis_range=[0, 1]
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig)
         
         # Display visualizations
         st.markdown("---")
@@ -437,7 +436,7 @@ with tab5:
     importance_plot = config.EDA_PLOTS_DIR / "feature_importance_random_forest.png"
     
     if importance_plot.exists():
-        st.image(str(importance_plot), use_container_width=True)
+        st.image(str(importance_plot))
         
         st.markdown("""
         ### Understanding Feature Importance
