@@ -33,6 +33,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
+    - name: Create necessary directories
+      run: |
+        mkdir -p data/raw
+        mkdir -p models
+        mkdir -p logs/eda_plots
+        
     - name: Create sample data for testing
       run: |
         python generate_sample_data.py --samples 1000
