@@ -1,0 +1,63 @@
+================================================================================
+MODEL EVALUATION REPORT: random_forest
+================================================================================
+
+METRICS:
+  ACCURACY: 0.5541
+  PRECISION: 0.5434
+  RECALL: 0.2661
+  F1: 0.3572
+  ROC_AUC: 0.5660
+
+CLASSIFICATION REPORT:
+              precision    recall  f1-score   support
+
+Not Canceled     0.5572    0.8051    0.6586      1052
+    Canceled     0.5434    0.2661    0.3572       917
+
+    accuracy                         0.5541      1969
+   macro avg     0.5503    0.5356    0.5079      1969
+weighted avg     0.5508    0.5541    0.5183      1969
+
+
+================================================================================
+BUSINESS INTERPRETATION - random_forest
+================================================================================
+
+1. OVERALL PERFORMANCE
+   The model achieves 55.41% accuracy in predicting
+   booking cancellations, with an ROC-AUC score of 0.5660.
+
+2. PRECISION (Positive Predictive Value)
+   Precision: 54.34%
+   When the model predicts a booking will be canceled,
+   it is correct 54.34% of the time.
+   Business Impact: Helps prioritize which bookings to focus retention
+   efforts on, minimizing wasted resources on false alarms.
+
+3. RECALL (Sensitivity)
+   Recall: 26.61%
+   The model correctly identifies 26.61% of all
+   bookings that will actually be canceled.
+   Business Impact: Indicates how many potential cancellations
+   we can proactively address with interventions.
+
+4. F1-SCORE (Harmonic Mean)
+   F1-Score: 0.3572
+   Balanced measure of precision and recall.
+   ⚠ May need further tuning to improve balance.
+
+5. ROC-AUC (Discriminative Power)
+   ROC-AUC: 0.5660
+   ⚠ Moderate discriminative ability - consider feature engineering.
+
+6. BUSINESS RECOMMENDATIONS
+   • Use this model to score all new bookings for cancellation risk
+   • Implement targeted retention strategies for high-risk bookings:
+     - Send personalized confirmation emails
+     - Offer flexible cancellation policies
+     - Provide special incentives or upgrades
+   • Monitor model performance monthly and retrain quarterly
+   • A/B test interventions to measure actual impact on cancellation rates
+
+================================================================================
