@@ -51,7 +51,7 @@ st.markdown('<p class="main-header">🏨 Hotel Booking Cancellation Prediction D
 
 # Sidebar
 with st.sidebar:
-    st.image("https://via.placeholder.com/300x100/1f77b4/ffffff?text=Hotel+Analytics", use_container_width=True)
+    st.image("https://via.placeholder.com/300x100/1f77b4/ffffff?text=Hotel+Analytics", width=300)
     st.markdown("### 📊 Navigation")
     
     # Check if data and models exist

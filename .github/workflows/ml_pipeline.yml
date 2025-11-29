@@ -129,7 +129,7 @@ jobs:
         pytest tests/ -v --cov=src --cov-report=term-missing || echo "Tests not yet implemented"
         
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: pipeline-artifacts
